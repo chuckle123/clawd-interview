@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "mcp__google-workspace__calendar_get_events",
+      "mcp__google-workspace__calendar_get_event_details",
+      "mcp__google-workspace__query_gmail_emails",
+      "mcp__google-workspace__gmail_get_message_details"
+    ]
+  }
+}

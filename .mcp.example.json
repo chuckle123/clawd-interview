@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "google-workspace": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["--from", "google-workspace-mcp==2.0.1", "google-workspace-worker"],
+      "env": {
+        "GOOGLE_WORKSPACE_CLIENT_ID": "${GOOGLE_WORKSPACE_CLIENT_ID}",
+        "GOOGLE_WORKSPACE_CLIENT_SECRET": "${GOOGLE_WORKSPACE_CLIENT_SECRET}",
+        "GOOGLE_WORKSPACE_REFRESH_TOKEN": "${GOOGLE_WORKSPACE_REFRESH_TOKEN}",
+        "GOOGLE_WORKSPACE_ENABLED_CAPABILITIES": "[\"gmail\", \"calendar\"]"
+      }
+    }
+  }
+}
