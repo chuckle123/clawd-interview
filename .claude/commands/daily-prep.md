@@ -1,3 +1,7 @@
+---
+description: Generate a daily job search briefing with today's interviews, pipeline health, action items, and email summary.
+---
+
 Generate a daily job search briefing.
 
 **Skill reference:** Follow `.claude/skills/action-items/SKILL.md` conventions for action item display and filtering.

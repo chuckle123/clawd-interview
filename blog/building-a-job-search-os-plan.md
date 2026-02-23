@@ -8,7 +8,7 @@
 
 ## Working Title Options
 
-1. "I Built a Job Search OS That Knows My Voice, My Calendar, and What I'm Looking For"
+1. "I Built a Job Search OS That Knows My Calendar and What I'm Looking For"
 2. "The Job Search Has a Tooling Problem"
 3. "Building an AI-Powered Job Search OS — From Slash Commands to Scheduled Briefings"
 
@@ -36,9 +36,8 @@ This isn't a polished product post. It's a build log — what I've built so far,
 
 These are worth explaining because they're the architectural foundation everything else builds on.
 
-**Skills** are markdown files that live in `.claude/skills/`. They define persistent context — things Claude should always know or always reference when doing certain kinds of work. They're not prompts you invoke. They're background knowledge that Claude pulls in when relevant. I have three:
+**Skills** are markdown files that live in `.claude/skills/`. They define persistent context — things Claude should always know or always reference when doing certain kinds of work. They're not prompts you invoke. They're background knowledge that Claude pulls in when relevant. I have two:
 
-- **Voice** (`voice/SKILL.md`): How I write — direct, no corporate fluff, contractions are fine, every sentence earns its place. When Claude drafts an email or a cover letter, this skill ensures the output sounds like me, not like a chatbot. It includes actual examples of my writing style.
 - **Values** (`values/SKILL.md`): What I care about in a role — impact over headcount, product voice, AI-forward environment, high trust and autonomy. When Claude evaluates a company or generates a fit assessment, it references these to flag alignment or red flags. A role at a 10,000-person company with rigid process gets flagged as a poor fit even if the tech stack matches.
 - **Action Items** (`action-items/SKILL.md`): Conventions for what counts as an action item (and what doesn't), priority levels, snooze behavior, sort order. This keeps the system from generating noise — "waiting for recruiter to respond" is pipeline status, not an action item.
 
@@ -51,7 +50,7 @@ These are worth explaining because they're the architectural foundation everythi
 - `/daily-prep` — Morning briefing: today's calendar, unread recruiter emails, pipeline health, overdue action items, interviews needing debrief
 - `/track [company] [stage]` — Pipeline overview or update a company's stage
 
-**What this actually does for me:** The boring-but-important work happens automatically. When I add a new company, the research is done, the fit assessment is written, the folder is structured. When I finish an interview, the debrief captures everything while it's fresh. The commands give me repeatable, high-quality execution. The skills give Claude the context to make that execution actually good — tuned to my voice, my values, and my conventions.
+**What this actually does for me:** The boring-but-important work happens automatically. When I add a new company, the research is done, the fit assessment is written, the folder is structured. When I finish an interview, the debrief captures everything while it's fresh. The commands give me repeatable, high-quality execution. The skills give Claude the context to make that execution actually good — tuned to my values and my conventions.
 
 **The insight:** The separation between skills and commands turned out to matter more than I expected. Skills are the *who* — my identity, my preferences, my standards. Commands are the *what* — the workflows that use that identity. When I add a new skill (like the action-items conventions), every command that touches action items immediately gets better without being rewritten. The context compounds.
 
@@ -150,7 +149,7 @@ The point of this system isn't to automate the job search. The point is to autom
 
 The goal is to broaden my search. Take on more interviews than I'd normally be able to handle, at a higher quality. Not because the AI is doing the interviews for me, but because it's handling everything that gets in the way of performing well in them. Research, scheduling logistics, follow-up tracking, prep generation — that's overhead. Necessary overhead, but overhead. Every hour I spend on it is an hour I'm not spending on actual interview preparation, studying system design, or sharpening the knowledge that actually gets evaluated.
 
-The stuff I'm automating: company research aggregation, calendar monitoring, email tracking, follow-up reminders, prep document generation, pipeline tracking, thank-you email drafting. These are important — miss a follow-up and you lose an opportunity — but they're not what gets you the job. They're *table stakes*.
+The stuff I'm automating: company research aggregation, calendar monitoring, email tracking, follow-up reminders, prep document generation, pipeline tracking. These are important — miss a follow-up and you lose an opportunity — but they're not what gets you the job. They're *table stakes*.
 
 The stuff I'm NOT automating: the actual interviews, the relationship building, the judgment calls about which companies to pursue, the negotiation, the career decision. These are the human parts. They're where my experience and personality actually matter. They're what the company is evaluating.
 
@@ -162,7 +161,7 @@ The system's job is to make sure the table stakes are always handled so I can fo
 
 ### Closing (~200 words)
 
-I'll open-source this when it's further along. Right now it's tailored to my specific workflow — my resume, my values, my voice, my Google account. But the architecture generalizes: skills for persistent context, MCP for tool integration, hybrid database for structured + unstructured data, scheduled automation for proactive briefings.
+I'll open-source this when it's further along. Right now it's tailored to my specific workflow — my resume, my values, my Google account. But the architecture generalizes: skills for persistent context, MCP for tool integration, hybrid database for structured + unstructured data, scheduled automation for proactive briefings.
 
 The iterative approach is the thing I'd encourage anyone to steal from this. Don't design the schema first. Don't plan the UI first. Start capturing. Use it. See what you actually reach for, what falls through the cracks, what you wish you could query. Then build the structure around that. The specs folder in this repo tells that story — each version of the plan is a snapshot of what I'd learned so far.
 

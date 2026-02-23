@@ -1,3 +1,8 @@
+---
+description: Run an interactive post-interview debrief. Walks through what happened, records the interview, updates the pipeline, and creates follow-up action items.
+argument-hint: <company-name>
+---
+
 Run an interactive post-interview debrief for a company.
 
 **Skill reference:** Follow `.claude/skills/action-items/SKILL.md` conventions when creating action items.

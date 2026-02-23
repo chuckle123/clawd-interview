@@ -1,3 +1,8 @@
+---
+description: View the full job search pipeline overview, or update a specific company's stage. Shows active companies, stats, and flags stale items.
+argument-hint: [company-name stage notes]
+---
+
 View or update the job search pipeline.
 
 Arguments: $ARGUMENTS

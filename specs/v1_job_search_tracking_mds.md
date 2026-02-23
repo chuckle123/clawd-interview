@@ -2,14 +2,14 @@
 
 ## Overview
 
-Build a personal job search operating system that runs entirely through Claude Code. The system uses markdown files as the data layer, Claude Code slash commands as the automation API, and custom skills to enforce voice, values, and conventions. No database, no UI — just a well-structured file system and Claude as the orchestration layer.
+Build a personal job search operating system that runs entirely through Claude Code. The system uses markdown files as the data layer, Claude Code slash commands as the automation API, and custom skills to enforce values and conventions. No database, no UI — just a well-structured file system and Claude as the orchestration layer.
 
 The user (Cameron Spencer) is running a multi-company job search and needs to:
 - Track companies through a pipeline (researching → applied → interviewing → offer/rejected)
 - Prepare for interviews with company-specific context
 - Debrief after interviews while details are fresh
 - Get a daily briefing of what needs attention
-- Maintain consistent voice and values across all outbound communication
+- Maintain consistent values across all communication
 
 ## Project Structure
 
@@ -26,8 +26,6 @@ job-search/
 │   │   └── track.md
 │   ├── skills/             # Skills (system-prompt-level context for Claude)
 │   │   ├── action-items/
-│   │   │   └── SKILL.md
-│   │   ├── voice/
 │   │   │   └── SKILL.md
 │   │   └── values/
 │   │   │   └── SKILL.md
@@ -413,18 +411,6 @@ Action item conventions for Cameron's job search pipeline.
 2. Due date ASC (earliest first, NULL last)
 3. Created date ASC
 ```
-
-### Voice Skill
-
-**File:** `.claude/skills/voice/SKILL.md`
-
-Defines Cameron's writing voice for all outbound communication. Key points:
-- Professional but approachable — senior engineer you'd grab coffee with, not LinkedIn influencer
-- Short sentences, contractions, no corporate buzzwords
-- Open emails warmly but briefly ("Thanks for the quick turnaround" not "I hope this email finds you well")
-- Questions should be genuinely curious, not performative
-- Assertive but not arrogant — confidence comes from specifics, not adjectives
-- Every sentence earns its place
 
 ### Values Skill
 

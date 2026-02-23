@@ -1,3 +1,8 @@
+---
+description: Add a new company to the job search pipeline. Creates the company folder, registers it in the database, researches the company, and generates a fit assessment.
+argument-hint: <company-name> [job-posting-url]
+---
+
 Add a new company to the job search pipeline.
 
 Arguments: $ARGUMENTS

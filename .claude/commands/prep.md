@@ -1,3 +1,8 @@
+---
+description: Generate comprehensive interview preparation for a specific company. Covers phone screen, technical, system design, behavioral, and hiring manager rounds.
+argument-hint: <company-name> [phone-screen|technical|system-design|behavioral|hiring-manager]
+---
+
 Generate comprehensive interview preparation for a specific company.
 
 Arguments: $ARGUMENTS

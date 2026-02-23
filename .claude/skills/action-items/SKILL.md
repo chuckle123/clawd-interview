@@ -1,3 +1,8 @@
+---
+description: Action item conventions for Cameron's job search pipeline. Defines what qualifies as an action item, priority levels, snooze behavior, and display sort order. Reference this when creating, filtering, or displaying action items.
+user-invocable: false
+---
+
 Action item conventions for Cameron's job search pipeline.
 
 ## What IS an action item (by priority category)
